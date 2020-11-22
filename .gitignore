@@ -1,0 +1,6 @@
+# 本地历史 .history
+/.history/
+
+# GOPATH bin目录 pkg 目录
+/bin/
+/pkg/
