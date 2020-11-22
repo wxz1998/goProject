@@ -29,5 +29,10 @@
         "prefix": "fm",
         "body": "func main(){\n    $0\n}",
         "description": "func"
+    },
+    "package": {
+        "prefix": "pm",
+        "body": "package main\nfunc main(){\n    fmt.Println($0)\n}",
+        "description": "package"
     }
 }

@@ -1,3 +1,3 @@
 module demo
-module demo/01
+module demo/*
 go 1.15
