@@ -34,5 +34,15 @@
         "prefix": "pm",
         "body": "package main\nfunc main(){\n    fmt.Println($0)\n}",
         "description": "package"
-    }
+    },
+    "if else": {
+        "prefix": "ie",
+        "body": "if i==0 {\nfmt.Println($0)\n}else{\n}",
+        "description": "if-else"
+    },
+    "else if": {
+        "prefix": "ei",
+        "body": "else if i==0 {\nfmt.Println($0)\n}",
+        "description": "else if"
+    },
 }
