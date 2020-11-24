@@ -1,9 +1,11 @@
 package main
 
+import "fmt"
+
 func main() {
-	// a := [5]int{1, 2, 3, 4, 5}
-	// s := a[1:3] // s := a[low:high]
-	// fmt.Printf("a:%v s:%v len(s):%v cap(s):%v\n", a, s, len(s), cap(s))
+	a := [5]int{1, 2, 3, 4, 5}
+	s := a[1:3] // s := a[low:high]
+	fmt.Printf("a:%v s:%v len(s):%v cap(s):%v\n", a, s, len(s), cap(s))
 
 	// a := [...]float64{67.7, 89.8, 21, 78}
 	// sum := float64(0)
