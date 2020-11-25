@@ -34,6 +34,12 @@ func main() {
 	// printarray(b)
 
 	// 切片
+	// 创建切片的方法一
+	// // 先创建数组
+	// a := [5]int{76, 77, 78, 79, 80}
+	// // 从数组a中拿出a[1]到a[3]的数据放入切片b 左包含 右不包含 [)
+	// var b []int = a[1:4] //creates a slice from a[1] to a[3]
+	// fmt.Println(b)
 }
 
 // 使用2个range,嵌套的方式打印多维数组
