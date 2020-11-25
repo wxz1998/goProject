@@ -43,14 +43,22 @@ func main() {
 	// var b []int = a[1:4] //creates a slice from a[1] to a[3]
 	// fmt.Println(b)
 
-	// 创建切片的方法二
-	// 创建数组并返回给切片c 但怎么看都像数组...
-	c := []int{6, 7, 8} //creates and array and returns a slice reference
-	fmt.Println(c)
-	// 对照创建数组 有什么不同?
-	// a := [3]int{5, 78, 8}
-	// a := [...]int{12, 78, 50}
-	// a := [...]string{"USA", "China", "India", "Germany", "France"}
+	// // 创建切片的方法二
+	// // 创建数组并返回给切片c 但怎么看都像数组...
+	// c := []int{6, 7, 8} //creates and array and returns a slice reference
+	// fmt.Println(c)
+	// // 对照创建数组 有什么不同?
+	// // a := [3]int{5, 78, 8}
+	// // a := [...]int{12, 78, 50}
+	// // a := [...]string{"USA", "China", "India", "Germany", "France"}
+
+	darr := [...]int{57, 89, 90, 82, 100, 78, 67, 69, 59}
+	dslice := darr[2:5]
+	fmt.Println("array before", darr)
+	for i := range dslice {
+		dslice[i]++
+	}
+	fmt.Println("array after", darr)
 }
 
 // 使用2个range,嵌套的方式打印多维数组
