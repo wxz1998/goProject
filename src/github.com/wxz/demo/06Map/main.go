@@ -88,6 +88,10 @@ func main() {
 	// 修改 fruitslice 的长度为它的容量。
 	fruitslice = fruitslice[:cap(fruitslice)] //re-slicing furitslice till its capacity
 	fmt.Println("After re-slicing length is", len(fruitslice), "and capacity is", cap(fruitslice))
+
+	// 	用 make 创建切片
+	// 内置函数 func make([]T, len, cap) []T 可以用来创建切片，该函数接受长度和容量作为参数，返回切片。
+	// 容量是可选的，默认与长度相同。使用 make 函数将会创建一个数组并返回它的切片。
 }
 
 // 使用2个range,嵌套的方式打印多维数组
