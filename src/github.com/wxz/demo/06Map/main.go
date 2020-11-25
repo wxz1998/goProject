@@ -80,7 +80,14 @@ func main() {
 	fruitarray := [...]string{"apple", "orange", "grape", "mango", "water melon", "pine apple", "chikoo"}
 	fruitslice := fruitarray[1:3]
 	fmt.Println(fruitslice)
-	fmt.Printf("length of slice %d capacity %d", len(fruitslice), cap(fruitslice)) //length of is 2 and capacity is 6
+	fmt.Printf("length of slice %d capacity %d\n", len(fruitslice), cap(fruitslice)) //length of is 2 and capacity is 6
+	// fruitarray 的长度是 7。fruiteslice 是从 fruitarray 的索引 1 开始的。
+	// 因此 fruiteslice 的容量是从 fruitarray 的第 1 个元素开始算起的数组中的元素个数，这个值是 6。因此 fruitslice 的容量是 6。
+	// 切片的长度可以动态的改变（最大为其容量）。任何超出最大容量的操作都会发生运行时错误。
+
+	// 修改 fruitslice 的长度为它的容量。
+	fruitslice = fruitslice[:cap(fruitslice)] //re-slicing furitslice till its capacity
+	fmt.Println("After re-slicing length is", len(fruitslice), "and capacity is", cap(fruitslice))
 }
 
 // 使用2个range,嵌套的方式打印多维数组
