@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// a := [5]int{1, 2, 3, 4, 5}
 	// s := a[1:3] // s := a[low:high]
@@ -73,6 +75,12 @@ func main() {
 	// nums2[1] = 101
 	// fmt.Println("array after modification to slice nums2", numa)
 	// 从输出结果可以看出，当多个切片共享同一个数组时，对每一个切片的修改都将会反映到这个数组中。
+
+	// 切片的长度和容量
+	fruitarray := [...]string{"apple", "orange", "grape", "mango", "water melon", "pine apple", "chikoo"}
+	fruitslice := fruitarray[1:3]
+	fmt.Println(fruitslice)
+	fmt.Printf("length of slice %d capacity %d", len(fruitslice), cap(fruitslice)) //length of is 2 and capacity is 6
 }
 
 // 使用2个range,嵌套的方式打印多维数组
