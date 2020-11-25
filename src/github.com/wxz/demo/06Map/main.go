@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	// a := [5]int{1, 2, 3, 4, 5}
 	// s := a[1:3] // s := a[low:high]
@@ -52,16 +50,17 @@ func main() {
 	// // a := [...]int{12, 78, 50}
 	// // a := [...]string{"USA", "China", "India", "Germany", "France"}
 
-	// 创建数组
-	darr := [...]int{57, 89, 90, 82, 100, 78, 67, 69, 59}
-	// 从数组中获得切片
-	dslice := darr[2:5]
-	fmt.Println("array before", darr)
-	for i := range dslice {
-		dslice[i]++
-		// 从数组中获得的切片能反影响到数组本身 切片 下层数据的上层表现
-	}
-	fmt.Println("array after", darr)
+	// // 切片反作用于数组
+	// // 创建数组
+	// darr := [...]int{57, 89, 90, 82, 100, 78, 67, 69, 59}
+	// // 从数组中获得切片
+	// dslice := darr[2:5]
+	// fmt.Println("array before", darr)
+	// for i := range dslice {
+	// 	dslice[i]++
+	// 	// 从数组中获得的切片能反影响到数组本身 切片 下层数据的上层表现
+	// }
+	// fmt.Println("array after", darr)
 }
 
 // 使用2个range,嵌套的方式打印多维数组
