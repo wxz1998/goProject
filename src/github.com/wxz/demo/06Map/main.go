@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// a := [5]int{1, 2, 3, 4, 5}
 	// s := a[1:3] // s := a[low:high]
@@ -40,6 +42,15 @@ func main() {
 	// // 从数组a中拿出a[1]到a[3]的数据放入切片b 左包含 右不包含 [)
 	// var b []int = a[1:4] //creates a slice from a[1] to a[3]
 	// fmt.Println(b)
+
+	// 创建切片的方法二
+	// 创建数组并返回给切片c 但怎么看都像数组...
+	c := []int{6, 7, 8} //creates and array and returns a slice reference
+	fmt.Println(c)
+	// 对照创建数组 有什么不同?
+	// a := [3]int{5, 78, 8}
+	// a := [...]int{12, 78, 50}
+	// a := [...]string{"USA", "China", "India", "Germany", "France"}
 }
 
 // 使用2个range,嵌套的方式打印多维数组
