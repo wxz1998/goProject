@@ -74,6 +74,7 @@ func main() {
 	fmt.Println("array after modification to slice nums1", numa)
 	nums2[1] = 101
 	fmt.Println("array after modification to slice nums2", numa)
+	// 从输出结果可以看出，当多个切片共享同一个数组时，对每一个切片的修改都将会反映到这个数组中。
 }
 
 // 使用2个range,嵌套的方式打印多维数组
