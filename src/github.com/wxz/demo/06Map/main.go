@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// a := [5]int{1, 2, 3, 4, 5}
 	// s := a[1:3] // s := a[low:high]
@@ -61,6 +63,17 @@ func main() {
 	// 	// 从数组中获得的切片能反影响到数组本身 切片 下层数据的上层表现
 	// }
 	// fmt.Println("array after", darr)
+
+	// 当若干个切片共享同一个底层数组时，对每一个切片的修改都会反映在底层数组中。
+	numa := [3]int{78, 79, 80}
+	// 默认全切
+	nums1 := numa[:] //creates a slice which contains all elements of the array
+	nums2 := numa[:]
+	fmt.Println("array before change 1", numa)
+	nums1[0] = 100
+	fmt.Println("array after modification to slice nums1", numa)
+	nums2[1] = 101
+	fmt.Println("array after modification to slice nums2", numa)
 }
 
 // 使用2个range,嵌套的方式打印多维数组
