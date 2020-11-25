@@ -76,22 +76,25 @@ func main() {
 	// fmt.Println("array after modification to slice nums2", numa)
 	// 从输出结果可以看出，当多个切片共享同一个数组时，对每一个切片的修改都将会反映到这个数组中。
 
-	// 切片的长度和容量
-	fruitarray := [...]string{"apple", "orange", "grape", "mango", "water melon", "pine apple", "chikoo"}
-	fruitslice := fruitarray[1:3]
-	fmt.Println(fruitslice)
-	fmt.Printf("length of slice %d capacity %d\n", len(fruitslice), cap(fruitslice)) //length of is 2 and capacity is 6
-	// fruitarray 的长度是 7。fruiteslice 是从 fruitarray 的索引 1 开始的。
-	// 因此 fruiteslice 的容量是从 fruitarray 的第 1 个元素开始算起的数组中的元素个数，这个值是 6。因此 fruitslice 的容量是 6。
-	// 切片的长度可以动态的改变（最大为其容量）。任何超出最大容量的操作都会发生运行时错误。
+	// // 切片的长度和容量
+	// fruitarray := [...]string{"apple", "orange", "grape", "mango", "water melon", "pine apple", "chikoo"}
+	// fruitslice := fruitarray[1:3]
+	// fmt.Println(fruitslice)
+	// fmt.Printf("length of slice %d capacity %d\n", len(fruitslice), cap(fruitslice)) //length of is 2 and capacity is 6
+	// // fruitarray 的长度是 7。fruiteslice 是从 fruitarray 的索引 1 开始的。
+	// // 因此 fruiteslice 的容量是从 fruitarray 的第 1 个元素开始算起的数组中的元素个数，这个值是 6。因此 fruitslice 的容量是 6。
+	// // 切片的长度可以动态的改变（最大为其容量）。任何超出最大容量的操作都会发生运行时错误。
 
-	// 修改 fruitslice 的长度为它的容量。
-	fruitslice = fruitslice[:cap(fruitslice)] //re-slicing furitslice till its capacity
-	fmt.Println("After re-slicing length is", len(fruitslice), "and capacity is", cap(fruitslice))
+	// // 修改 fruitslice 的长度为它的容量。
+	// fruitslice = fruitslice[:cap(fruitslice)] //re-slicing furitslice till its capacity
+	// fmt.Println("After re-slicing length is", len(fruitslice), "and capacity is", cap(fruitslice))
 
 	// 	用 make 创建切片
 	// 内置函数 func make([]T, len, cap) []T 可以用来创建切片，该函数接受长度和容量作为参数，返回切片。
 	// 容量是可选的，默认与长度相同。使用 make 函数将会创建一个数组并返回它的切片。
+	i := make([]int, 5, 5)
+	fmt.Println(i)
+	// 用 make 创建的切片的元素值默认为 0 值。上面的程序输出为：[0 0 0 0 0]。
 }
 
 // 使用2个range,嵌套的方式打印多维数组
