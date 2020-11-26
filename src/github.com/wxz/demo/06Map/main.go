@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// a := [5]int{1, 2, 3, 4, 5}
 	// s := a[1:3] // s := a[low:high]
@@ -161,6 +163,11 @@ func main() {
 
 	// 解决该问题的一个方法是使用 copy 函数 func copy(dst, src []T) int 来创建该切片的一个拷贝。
 	// 这样我们就可以使用这个新的切片，原来的数组可以被垃圾回收。
+	countriesNeeded := countries()
+	fmt.Println(countriesNeeded)
+	// 在上面程序中， neededCountries := countries[:len(countries)-2] 创建一个底层数组为 countries 并排除最后两个元素的切片。
+	// 下面将 neededCountries 拷贝到 countriesCpy 并在下一行返回 countriesCpy。
+	// 现在数组countries 可以被垃圾回收，因为 neededCountries 不再被引用。
 }
 
 // 使用2个range,嵌套的方式打印多维数组
@@ -177,5 +184,12 @@ func main() {
 // 	for i := range numbers {
 // 		numbers[i] -= 2
 // 	}
-
 // }
+
+func countries() []string {
+	countries := []string{"USA", "Singapore", "Germany", "India", "Australia"}
+	neededCountries := countries[:len(countries)-2]
+	countriesCpy := make([]string, len(neededCountries))
+	copy(countriesCpy, neededCountries) //copies neededCountries to countriesCpy
+	return countriesCpy
+}
