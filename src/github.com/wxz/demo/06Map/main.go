@@ -121,10 +121,40 @@ func main() {
 	// }
 
 	// 可以使用 ... 操作符将一个切片追加到另一个切片末尾：
-	veggies := []string{"potatoes", "tomatoes", "brinjal"}
-	fruits := []string{"oranges", "apples"}
-	food := append(veggies, fruits...)
-	fmt.Println("food:", food)
+	// veggies := []string{"potatoes", "tomatoes", "brinjal"}
+	// fruits := []string{"oranges", "apples"}
+	// food := append(veggies, fruits...)
+	// fmt.Println("food:", food)
+
+	// 	切片作为函数参数
+	// 可以认为切片在内部表示为如下的结构体：
+	// type slice struct {
+	//     Length        int
+	//     Capacity      int
+	//     ZerothElement *byte
+	// }
+	// 可以看到切片包含长度、容量、以及一个指向首元素的指针。
+	// 当将一个切片作为参数传递给一个函数时，虽然是值传递，但是指针始终指向同一个数组。
+	// 因此将切片作为参数传给函数时，函数对该切片的修改在函数外部也可以看到。
+
+	// nos := []int{8, 7, 6}
+	// fmt.Println("slice before function call", nos)
+	// subtactOne(nos)                               //function modifies the slice
+	// fmt.Println("slice after function call", nos) //modifications are visible outside
+
+	// 	多维切片
+	// 同数组一样，切片也可以有多个维度。
+	pls := [][]string{
+		{"C", "C++"},
+		{"JavaScript"},
+		{"Go", "Rust"},
+	}
+	for _, v1 := range pls {
+		for _, v2 := range v1 {
+			fmt.Printf("%s ", v2)
+		}
+		fmt.Printf("\n")
+	}
 }
 
 // 使用2个range,嵌套的方式打印多维数组
@@ -135,4 +165,11 @@ func main() {
 // 		}
 // 		fmt.Printf("\n")
 // 	}
+// }
+
+// func subtactOne(numbers []int) {
+// 	for i := range numbers {
+// 		numbers[i] -= 2
+// 	}
+
 // }
