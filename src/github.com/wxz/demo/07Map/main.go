@@ -114,4 +114,6 @@ func main() {
 	for index, value := range mapSlice {
 		fmt.Printf("index:%d value:%v\n", index, value)
 	}
+
+	// 值为切片类型的map
 }
