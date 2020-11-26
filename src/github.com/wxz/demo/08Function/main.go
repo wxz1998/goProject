@@ -28,6 +28,8 @@ func main() {
 
 	testNum()
 	fmt.Println(num)
+
+	testLocalVar3()
 }
 
 // func sayHello() {
