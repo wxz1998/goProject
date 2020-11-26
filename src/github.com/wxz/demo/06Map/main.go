@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	// a := [5]int{1, 2, 3, 4, 5}
 	// s := a[1:3] // s := a[low:high]
@@ -144,17 +142,17 @@ func main() {
 
 	// 	多维切片
 	// 同数组一样，切片也可以有多个维度。
-	pls := [][]string{
-		{"C", "C++"},
-		{"JavaScript"},
-		{"Go", "Rust"},
-	}
-	for _, v1 := range pls {
-		for _, v2 := range v1 {
-			fmt.Printf("%s ", v2)
-		}
-		fmt.Printf("\n")
-	}
+	// pls := [][]string{
+	// 	{"C", "C++"},
+	// 	{"JavaScript"},
+	// 	{"Go", "Rust"},
+	// }
+	// for _, v1 := range pls {
+	// 	for _, v2 := range v1 {
+	// 		fmt.Printf("%s ", v2)
+	// 	}
+	// 	fmt.Printf("\n")
+	// }
 
 	// 	内存优化
 	// 切片保留对底层数组的引用。只要切片存在于内存中，数组就不能被垃圾回收。这在内存管理方便可能是值得关注的。
