@@ -48,3 +48,5 @@ func intSum3(x int, y ...int) int {
 	}
 	return sum
 }
+
+// 本质上，函数的可变参数是通过切片来实现的。
