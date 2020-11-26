@@ -33,14 +33,23 @@ func main() {
 	// 	判断某个键是否存在
 	// Go语言中有个判断map中键是否存在的特殊写法，格式如下:
 	// value, ok := map[key]
+	// scoreMap := make(map[string]int)
+	// scoreMap["张三"] = 90
+	// scoreMap["小明"] = 100
+	// // 如果key存在ok为true,v为对应的值；不存在ok为false,v为值类型的零值
+	// v, ok := scoreMap["张三"]
+	// if ok {
+	// 	fmt.Println(v)
+	// } else {
+	// 	fmt.Println("查无此人")
+	// }
+
+	// 使用for range遍历map
 	scoreMap := make(map[string]int)
 	scoreMap["张三"] = 90
 	scoreMap["小明"] = 100
-	// 如果key存在ok为true,v为对应的值；不存在ok为false,v为值类型的零值
-	v, ok := scoreMap["张三"]
-	if ok {
-		fmt.Println(v)
-	} else {
-		fmt.Println("查无此人")
+	scoreMap["娜扎"] = 60
+	for k, v := range scoreMap {
+		fmt.Println(k, v)
 	}
 }
