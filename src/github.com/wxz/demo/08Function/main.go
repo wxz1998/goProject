@@ -3,7 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	var age int = 8
-	var name string = "wxz"
-	fmt.Println(name, age)
+	sayHello()
+	ret := intSum(10, 20)
+	fmt.Println(ret)
+}
+
+func sayHello() {
+	fmt.Println("hello")
+}
+
+func intSum(x int, y int) int { // 可以写成"x , y int"类型简写
+	return x + y
 }
