@@ -127,4 +127,9 @@ func main() {
 	value = append(value, "北京", "上海")
 	sliceMap[key] = value
 	fmt.Println(sliceMap)
+
+	// output:
+	// map[]
+	// after init
+	// map[中国:[北京 上海]]
 }
