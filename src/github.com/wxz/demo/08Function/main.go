@@ -27,6 +27,7 @@ func main() {
 	// fmt.Println(x) // 此时无法使用变量x
 
 	testNum()
+	fmt.Println(num)
 }
 
 // func sayHello() {
