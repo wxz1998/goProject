@@ -54,12 +54,25 @@ func main() {
 	// }
 
 	// 但我们只想遍历key的时候，可以按下面的写法：
+	// scoreMap := make(map[string]int)
+	// scoreMap["张三"] = 90
+	// scoreMap["小明"] = 100
+	// scoreMap["娜扎"] = 60
+	// for k := range scoreMap {
+	// 	fmt.Println(k)
+	// }
+	// 注意： 遍历map时的元素顺序与添加键值对的顺序无关。
+
+	// 	使用delete()内建函数从map中删除一组键值对，delete()函数的格式如下：
+	// delete(map, key)
+	// map:表示要删除键值对的map
+	// key:表示要删除的键值对的键
 	scoreMap := make(map[string]int)
 	scoreMap["张三"] = 90
 	scoreMap["小明"] = 100
 	scoreMap["娜扎"] = 60
-	for k := range scoreMap {
-		fmt.Println(k)
+	delete(scoreMap, "小明") //将小明:100从map中删除
+	for k, v := range scoreMap {
+		fmt.Println(k, v)
 	}
-	// 注意： 遍历map时的元素顺序与添加键值对的顺序无关。
 }
