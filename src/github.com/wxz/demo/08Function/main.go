@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
 	// sayHello()
 	// ret := intSum(10, 20)
@@ -26,19 +22,19 @@ func main() {
 	// testLocalVar1()
 	// fmt.Println(x) // 此时无法使用变量x
 
-	testNum()
-	fmt.Println(num)
+	// testNum()
+	// fmt.Println(num)
 
-	testLocalVar3()
+	// testLocalVar3()
 
-	var c calculation               // 声明一个calculation类型的变量c
-	c = add                         // 把add赋值给c
-	fmt.Printf("type of c:%T\n", c) // type of c:main.calculation
-	fmt.Println(c(1, 2))            // 像调用add一样调用c
+	// var c calculation               // 声明一个calculation类型的变量c
+	// c = add                         // 把add赋值给c
+	// fmt.Printf("type of c:%T\n", c) // type of c:main.calculation
+	// fmt.Println(c(1, 2))            // 像调用add一样调用c
 
-	f := add                        // 将函数add赋值给变量f1
-	fmt.Printf("type of f:%T\n", f) // type of f:func(int, int) int
-	fmt.Println(f(10, 20))          // 像调用add一样调用f
+	// f := add                        // 将函数add赋值给变量f1
+	// fmt.Printf("type of f:%T\n", f) // type of f:func(int, int) int
+	// fmt.Println(f(10, 20))          // 像调用add一样调用f
 }
 
 // func sayHello() {
@@ -116,12 +112,12 @@ func main() {
 
 // 如果局部变量和全局变量重名，优先访问局部变量。
 //定义全局变量num
-var num int64 = 10
+// var num int64 = 10
 
-func testNum() {
-	num := 100
-	fmt.Printf("num=%d\n", num) // 函数中优先使用局部变量
-}
+// func testNum() {
+// 	num := 100
+// 	fmt.Printf("num=%d\n", num) // 函数中优先使用局部变量
+// }
 
 // 接下来我们来看一下语句块定义的变量，通常我们会在if条件判断、for循环、switch语句上使用这种定义变量的方式。
 // func testLocalVar2(x, y int) {
@@ -134,12 +130,12 @@ func testNum() {
 // }
 
 // 还有我们之前讲过的for循环语句中定义的变量，也是只在for语句块中生效：
-func testLocalVar3() {
-	for i := 0; i < 10; i++ {
-		fmt.Println(i) //变量i只在当前for语句块中生效
-	}
-	//fmt.Println(i) //此处无法使用变量i
-}
+// func testLocalVar3() {
+// 	for i := 0; i < 10; i++ {
+// 		fmt.Println(i) //变量i只在当前for语句块中生效
+// 	}
+// 	//fmt.Println(i) //此处无法使用变量i
+// }
 
 // 函数类型与变量
 // 定义函数类型
@@ -150,9 +146,9 @@ type calculation func(int, int) int
 // 上面语句定义了一个calculation类型，它是一种函数类型，这种函数接收两个int类型的参数并且返回一个int类型的返回值。
 
 // 简单来说，凡是满足这个条件的函数都是calculation类型的函数，例如下面的add和sub是calculation类型。
-func add(x, y int) int {
-	return x + y
-}
+// func add(x, y int) int {
+// 	return x + y
+// }
 
 // func sub(x, y int) int {
 // 	return x - y
@@ -162,3 +158,15 @@ func add(x, y int) int {
 
 // var c calculation
 // c = add
+
+// 高阶函数
+// 高阶函数分为函数作为参数和函数作为返回值两部分。
+// 函数作为参数
+// 函数可以作为参数：
+
+func add(x, y int) int {
+	return x + y
+}
+func calc(x, y int, op func(int, int) int) int {
+	return op(x, y)
+}
