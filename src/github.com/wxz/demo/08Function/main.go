@@ -1,46 +1,42 @@
 package main
 
-import "fmt"
+// func main() {
+// sayHello()
+// ret := intSum(10, 20)
+// fmt.Println(ret)
 
-func main() {
-	// sayHello()
-	// ret := intSum(10, 20)
-	// fmt.Println(ret)
+// ret1 := intSum2()
+// ret2 := intSum2(10)
+// ret3 := intSum2(10, 20)
+// ret4 := intSum2(10, 20, 30)
+// fmt.Println(ret1, ret2, ret3, ret4) //0 10 30 60
 
-	// ret1 := intSum2()
-	// ret2 := intSum2(10)
-	// ret3 := intSum2(10, 20)
-	// ret4 := intSum2(10, 20, 30)
-	// fmt.Println(ret1, ret2, ret3, ret4) //0 10 30 60
+// ret5 := intSum3(100)
+// ret6 := intSum3(100, 10)
+// ret7 := intSum3(100, 10, 20)
+// ret8 := intSum3(100, 10, 20, 30)
+// fmt.Println(ret5, ret6, ret7, ret8) //100 110 130 160
 
-	// ret5 := intSum3(100)
-	// ret6 := intSum3(100, 10)
-	// ret7 := intSum3(100, 10, 20)
-	// ret8 := intSum3(100, 10, 20, 30)
-	// fmt.Println(ret5, ret6, ret7, ret8) //100 110 130 160
+// testGlobalVar()
 
-	// testGlobalVar()
+// testLocalVar1()
+// fmt.Println(x) // 此时无法使用变量x
 
-	// testLocalVar1()
-	// fmt.Println(x) // 此时无法使用变量x
+// testNum()
+// fmt.Println(num)
 
-	// testNum()
-	// fmt.Println(num)
+// testLocalVar3()
 
-	// testLocalVar3()
+// var c calculation               // 声明一个calculation类型的变量c
+// c = add                         // 把add赋值给c
+// fmt.Printf("type of c:%T\n", c) // type of c:main.calculation
+// fmt.Println(c(1, 2))            // 像调用add一样调用c
 
-	// var c calculation               // 声明一个calculation类型的变量c
-	// c = add                         // 把add赋值给c
-	// fmt.Printf("type of c:%T\n", c) // type of c:main.calculation
-	// fmt.Println(c(1, 2))            // 像调用add一样调用c
+// f := add                        // 将函数add赋值给变量f1
+// fmt.Printf("type of f:%T\n", f) // type of f:func(int, int) int
+// fmt.Println(f(10, 20))          // 像调用add一样调用f
 
-	// f := add                        // 将函数add赋值给变量f1
-	// fmt.Printf("type of f:%T\n", f) // type of f:func(int, int) int
-	// fmt.Println(f(10, 20))          // 像调用add一样调用f
-
-	ret2 := calc(10, 20, add)
-	fmt.Println(ret2) //30
-}
+// }
 
 // func sayHello() {
 // 	fmt.Println("hello")
@@ -164,14 +160,23 @@ func main() {
 // var c calculation
 // c = add
 
+// ##############################################################
 // 高阶函数
 // 高阶函数分为函数作为参数和函数作为返回值两部分。
 // 函数作为参数
 // 函数可以作为参数：
 
-func add(x, y int) int {
-	return x + y
-}
-func calc(x, y int, op func(int, int) int) int {
-	return op(x, y)
-}
+// func add(x, y int) int {
+// 	return x + y
+// }
+// func calc(x, y int, op func(int, int) int) int {
+// 	return op(x, y)
+// }
+
+// func main() {
+// 	ret2 := calc(10, 20, add)
+// 	fmt.Println(ret2) //30
+// }
+
+// 函数作为返回值
+// 函数也可以作为返回值：
