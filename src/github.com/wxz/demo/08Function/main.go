@@ -21,6 +21,8 @@ func intSum(x int, y int) int { // 可以写成"x , y int"类型简写
 	return x + y
 }
 
+// 可变参数是指函数的参数数量不固定。Go语言中的可变参数通过在参数名后加...来标识。
+// 注意：可变参数通常要作为函数的最后一个参数。
 func intSum2(x ...int) int {
 	fmt.Println(x) //x是一个切片
 	sum := 0
