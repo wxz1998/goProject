@@ -14,6 +14,7 @@ func main() {
 
 	//map基本使用
 	// map中的数据都是成对出现的，map的基本使用示例代码如下：
+	// map内参数成对出现 下面 string 指姓名 int 指分数
 	scoreMap := make(map[string]int, 8)
 	scoreMap["张三"] = 90
 	scoreMap["小明"] = 100
