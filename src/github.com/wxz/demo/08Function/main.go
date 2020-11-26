@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// sayHello()
 	// ret := intSum(10, 20)
@@ -35,6 +37,9 @@ func main() {
 	// f := add                        // 将函数add赋值给变量f1
 	// fmt.Printf("type of f:%T\n", f) // type of f:func(int, int) int
 	// fmt.Println(f(10, 20))          // 像调用add一样调用f
+
+	ret2 := calc(10, 20, add)
+	fmt.Println(ret2) //30
 }
 
 // func sayHello() {
@@ -141,7 +146,7 @@ func main() {
 // 定义函数类型
 // 我们可以使用type关键字来定义一个函数类型，具体格式如下：
 
-type calculation func(int, int) int
+// type calculation func(int, int) int
 
 // 上面语句定义了一个calculation类型，它是一种函数类型，这种函数接收两个int类型的参数并且返回一个int类型的返回值。
 
