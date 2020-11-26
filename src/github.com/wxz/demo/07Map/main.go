@@ -45,11 +45,21 @@ func main() {
 	// }
 
 	// 使用for range遍历map
+	// scoreMap := make(map[string]int)
+	// scoreMap["张三"] = 90
+	// scoreMap["小明"] = 100
+	// scoreMap["娜扎"] = 60
+	// for k, v := range scoreMap {
+	// 	fmt.Println(k, v)
+	// }
+
+	// 但我们只想遍历key的时候，可以按下面的写法：
 	scoreMap := make(map[string]int)
 	scoreMap["张三"] = 90
 	scoreMap["小明"] = 100
 	scoreMap["娜扎"] = 60
-	for k, v := range scoreMap {
-		fmt.Println(k, v)
+	for k := range scoreMap {
+		fmt.Println(k)
 	}
+	// 注意： 遍历map时的元素顺序与添加键值对的顺序无关。
 }
