@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"	"math/rand"
+	"fmt"
+	"math/rand"
 	"sort"
 	"time"
 )
-
 
 func main() {
 	// Go语言中 map的定义语法如下：
