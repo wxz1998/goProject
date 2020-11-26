@@ -131,3 +131,12 @@ func testLocalVar3() {
 	}
 	//fmt.Println(i) //此处无法使用变量i
 }
+
+// 函数类型与变量
+// 定义函数类型
+// 我们可以使用type关键字来定义一个函数类型，具体格式如下：
+
+// type calculation func(int, int) int
+// 上面语句定义了一个calculation类型，它是一种函数类型，这种函数接收两个int类型的参数并且返回一个int类型的返回值。
+
+// 简单来说，凡是满足这个条件的函数都是calculation类型的函数，例如下面的add和sub是calculation类型。
