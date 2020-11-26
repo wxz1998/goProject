@@ -24,9 +24,23 @@ func main() {
 	// fmt.Printf("type of a:%T\n", scoreMap)
 
 	// map也支持在声明的时候填充元素，例如：
-	userInfo := map[string]string{
-		"username": "沙河小王子",
-		"password": "123456",
+	// userInfo := map[string]string{
+	// 	"username": "沙河小王子",
+	// 	"password": "123456",
+	// }
+	// fmt.Println(userInfo)
+
+	// 	判断某个键是否存在
+	// Go语言中有个判断map中键是否存在的特殊写法，格式如下:
+	// value, ok := map[key]
+	scoreMap := make(map[string]int)
+	scoreMap["张三"] = 90
+	scoreMap["小明"] = 100
+	// 如果key存在ok为true,v为对应的值；不存在ok为false,v为值类型的零值
+	v, ok := scoreMap["张三"]
+	if ok {
+		fmt.Println(v)
+	} else {
+		fmt.Println("查无此人")
 	}
-	fmt.Println(userInfo)
 }
