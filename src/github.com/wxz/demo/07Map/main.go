@@ -16,10 +16,17 @@ func main() {
 	// map中的数据都是成对出现的，map的基本使用示例代码如下：
 	// map内参数成对出现 下面 string 指姓名 int 指分数
 	// 先入后出(后入先出)后添加的会被先打印出来 类似栈
-	scoreMap := make(map[string]int, 8)
-	scoreMap["张三"] = 90
-	scoreMap["小明"] = 100
-	fmt.Println(scoreMap)
-	fmt.Println(scoreMap["小明"])
-	fmt.Printf("type of a:%T\n", scoreMap)
+	// scoreMap := make(map[string]int, 8)
+	// scoreMap["张三"] = 90
+	// scoreMap["小明"] = 100
+	// fmt.Println(scoreMap)
+	// fmt.Println(scoreMap["小明"])
+	// fmt.Printf("type of a:%T\n", scoreMap)
+
+	// map也支持在声明的时候填充元素，例如：
+	userInfo := map[string]string{
+		"username": "沙河小王子",
+		"password": "123456",
+	}
+	fmt.Println(userInfo)
 }
