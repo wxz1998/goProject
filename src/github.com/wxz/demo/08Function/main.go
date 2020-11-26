@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 func main() {
 	// sayHello()
 	// ret := intSum(10, 20)
@@ -16,6 +20,13 @@ func main() {
 	// ret7 := intSum3(100, 10, 20)
 	// ret8 := intSum3(100, 10, 20, 30)
 	// fmt.Println(ret5, ret6, ret7, ret8) //100 110 130 160
+
+	// testGlobalVar()
+
+	// testLocalVar1()
+	// fmt.Println(x) // 此时无法使用变量x
+
+	testNum()
 }
 
 // func sayHello() {
@@ -73,3 +84,29 @@ func main() {
 
 // 函数进阶
 // 变量作用域
+// 全局变量
+// 全局变量是定义在函数外部的变量，它在程序整个运行周期内都有效。 在函数中可以访问到全局变量。
+
+//定义全局变量num
+// var num int64 = 10
+
+// func testGlobalVar() {
+// 	fmt.Printf("num=%d\n", num) //函数中可以访问全局变量num
+// }
+
+// 局部变量
+// 局部变量又分为两种： 函数内定义的变量无法在该函数外使用，例如下面的示例代码main函数中无法使用testLocalVar函数中定义的变量x：
+// func testLocalVar1() {
+// 	//定义一个函数局部变量x,仅在该函数内生效
+// 	var x int64 = 100
+// 	fmt.Printf("x=%d\n", x)
+// }
+
+// 如果局部变量和全局变量重名，优先访问局部变量。
+//定义全局变量num
+var num int64 = 10
+
+func testNum() {
+	num := 100
+	fmt.Printf("num=%d\n", num) // 函数中优先使用局部变量
+}
