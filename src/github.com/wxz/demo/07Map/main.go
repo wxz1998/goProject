@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"	"math/rand"
+	"sort"
+	"time"
+)
+
 
 func main() {
 	// Go语言中 map的定义语法如下：
@@ -67,12 +72,34 @@ func main() {
 	// delete(map, key)
 	// map:表示要删除键值对的map
 	// key:表示要删除的键值对的键
-	scoreMap := make(map[string]int)
-	scoreMap["张三"] = 90
-	scoreMap["小明"] = 100
-	scoreMap["娜扎"] = 60
-	delete(scoreMap, "小明") //将小明:100从map中删除
-	for k, v := range scoreMap {
-		fmt.Println(k, v)
+	// scoreMap := make(map[string]int)
+	// scoreMap["张三"] = 90
+	// scoreMap["小明"] = 100
+	// scoreMap["娜扎"] = 60
+	// delete(scoreMap, "小明") //将小明:100从map中删除
+	// for k, v := range scoreMap {
+	// 	fmt.Println(k, v)
+	// }
+
+	// 按照指定顺序遍历map
+	rand.Seed(time.Now().UnixNano()) //初始化随机数种子
+
+	var scoreMap = make(map[string]int, 200)
+
+	for i := 0; i < 100; i++ {
+		key := fmt.Sprintf("stu%02d", i) //生成stu开头的字符串
+		value := rand.Intn(100)          //生成0~99的随机整数
+		scoreMap[key] = value
+	}
+	//取出map中的所有key存入切片keys
+	var keys = make([]string, 0, 200)
+	for key := range scoreMap {
+		keys = append(keys, key)
+	}
+	//对切片进行排序
+	sort.Strings(keys)
+	//按照排序后的key遍历map
+	for _, key := range keys {
+		fmt.Println(key, scoreMap[key])
 	}
 }
