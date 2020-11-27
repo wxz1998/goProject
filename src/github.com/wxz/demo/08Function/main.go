@@ -204,17 +204,38 @@ import "fmt"
 
 // 匿名函数因为没有函数名，所以没办法像普通函数那样调用，所以匿名函数需要保存到某个变量或者作为立即执行函数:
 
-func main() {
-	// 将匿名函数保存到变量
-	add := func(x, y int) {
-		fmt.Println(x + y)
-	}
-	add(10, 20) // 通过变量调用匿名函数
+// func main() {
+// 	// 将匿名函数保存到变量
+// 	add := func(x, y int) {
+// 		fmt.Println(x + y)
+// 	}
+// 	add(10, 20) // 通过变量调用匿名函数
 
-	//自执行函数：匿名函数定义完加()直接执行
-	func(x, y int) {
-		fmt.Println(x + y)
-	}(10, 20)
-}
+// 	//自执行函数：匿名函数定义完加()直接执行
+// 	func(x, y int) {
+// 		fmt.Println(x + y)
+// 	}(10, 20)
+// }
 
 // 匿名函数多用于实现回调函数和闭包。
+
+// 闭包
+// 闭包指的是一个函数和与其相关的引用环境组合而成的实体。简单来说，闭包=函数+引用环境。 首先我们来看一个例子：
+
+func adder() func(int) int {
+	var x int
+	return func(y int) int {
+		x += y
+		return x
+	}
+}
+func main() {
+	var f = adder()
+	fmt.Println(f(10)) //10
+	fmt.Println(f(20)) //30
+	fmt.Println(f(30)) //60
+
+	f1 := adder()
+	fmt.Println(f1(40)) //40
+	fmt.Println(f1(50)) //90
+}
