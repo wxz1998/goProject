@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // 指针地址和指针类型
 // Go语言中的指针不能进行偏移和运算，因此Go语言中的指针操作非常简单，我们只需要记住两个符号：&（取地址）和*（根据地址取值）
 // func main() {
@@ -29,3 +31,21 @@ package main
 // 对变量进行取地址（&）操作，可以获得这个变量的指针变量。
 // 指针变量的值是指针地址。
 // 对指针变量进行取值（*）操作，可以获得指针变量指向的原变量的值。
+
+// 指针传值示例：
+
+func modify1(x int) {
+	x = 100
+}
+
+func modify2(x *int) {
+	*x = 100
+}
+
+func main() {
+	a := 10
+	modify1(a)
+	fmt.Println(a) // 10
+	modify2(&a)
+	fmt.Println(a) // 100
+}

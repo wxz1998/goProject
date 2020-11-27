@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // func main() {
 // sayHello()
 // ret := intSum(10, 20)
@@ -432,15 +430,19 @@ import "fmt"
 // 写一个程序，计算每个用户分到多少金币，以及最后剩余多少金币？
 // 程序结构如下，请实现 ‘dispatchCoin’ 函数
 
-var (
-	coins = 50
-	users = []string{
-		"Matthew", "Sarah", "Augustus", "Heidi", "Emilie", "Peter", "Giana", "Adriano", "Aaron", "Elizabeth",
-	}
-	distribution = make(map[string]int, len(users))
-)
+// var (
+// 	coins = 50
+// 	users = []string{
+// 		"Matthew", "Sarah", "Augustus", "Heidi", "Emilie", "Peter", "Giana", "Adriano", "Aaron", "Elizabeth",
+// 	}
+// 	distribution = make(map[string]int, len(users))
+// )
 
-func main() {
-	left := dispatchCoin()
-	fmt.Println("剩下：", left)
+// func main() {
+// 	left := dispatchCoin()
+// 	fmt.Println("剩下：", left)
+// }
+package main
+func main(){
+	fmt.Println()
 }
