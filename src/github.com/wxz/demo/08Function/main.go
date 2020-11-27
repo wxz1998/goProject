@@ -242,22 +242,22 @@ import "fmt"
 
 // 变量f是一个函数并且它引用了其外部作用域中的x变量，此时f就是一个闭包。
 // 在f的生命周期内，变量x也一直有效。 闭包进阶示例1：
-func adder2(x int) func(int) int {
-	return func(y int) int {
-		x += y
-		return x
-	}
-}
-func main() {
-	var f = adder2(10)
-	fmt.Println(f(10)) //20
-	fmt.Println(f(20)) //40
-	fmt.Println(f(30)) //70
+// func adder2(x int) func(int) int {
+// 	return func(y int) int {
+// 		x += y
+// 		return x
+// 	}
+// }
+// func main() {
+// 	var f = adder2(10)
+// 	fmt.Println(f(10)) //20
+// 	fmt.Println(f(20)) //40
+// 	fmt.Println(f(30)) //70
 
-	f1 := adder2(20)
-	fmt.Println(f1(40)) //60
-	fmt.Println(f1(50)) //110
-}
+// 	f1 := adder2(20)
+// 	fmt.Println(f1(40)) //60
+// 	fmt.Println(f1(50)) //110
+// }
 
 // 闭包进阶示例2：
 
@@ -419,3 +419,28 @@ func main() {
 
 // recover()必须搭配defer使用。
 // defer一定要在可能引发panic的语句之前定义。
+
+// 练习题
+// 分金币
+
+// 你有50枚金币，需要分配给以下几个人：Matthew,Sarah,Augustus,Heidi,Emilie,Peter,Giana,Adriano,Aaron,Elizabeth。
+// 分配规则如下：
+// a. 名字中每包含1个'e'或'E'分1枚金币
+// b. 名字中每包含1个'i'或'I'分2枚金币
+// c. 名字中每包含1个'o'或'O'分3枚金币
+// d: 名字中每包含1个'u'或'U'分4枚金币
+// 写一个程序，计算每个用户分到多少金币，以及最后剩余多少金币？
+// 程序结构如下，请实现 ‘dispatchCoin’ 函数
+
+var (
+	coins = 50
+	users = []string{
+		"Matthew", "Sarah", "Augustus", "Heidi", "Emilie", "Peter", "Giana", "Adriano", "Aaron", "Elizabeth",
+	}
+	distribution = make(map[string]int, len(users))
+)
+
+func main() {
+	left := dispatchCoin()
+	fmt.Println("剩下：", left)
+}
