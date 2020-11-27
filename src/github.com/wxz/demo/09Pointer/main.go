@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// 指针地址和指针类型
 func main() {
 	a := 10
 	b := &a                            // 把a的内存地址返回给b
