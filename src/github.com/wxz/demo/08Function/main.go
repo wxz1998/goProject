@@ -368,3 +368,23 @@ func main() {
 // 	defer calc("BB", x, calc("B", x, y))
 // 	y = 20
 // }
+
+// panic/recover
+// Go语言中目前（Go1.12）是没有异常机制，但是使用panic/recover模式来处理错误。
+// panic可以在任何地方引发，但recover只有在defer调用的函数中有效。
+// func funcA() {
+// 	fmt.Println("func A")
+// }
+
+// func funcB() {
+// 	panic("panic in B")
+// }
+
+// func funcC() {
+// 	fmt.Println("func C")
+// }
+// func main() {
+// 	funcA()
+// 	funcB()
+// 	funcC()
+// }
