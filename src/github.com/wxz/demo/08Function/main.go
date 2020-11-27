@@ -222,20 +222,39 @@ import "fmt"
 // 闭包
 // 闭包指的是一个函数和与其相关的引用环境组合而成的实体。简单来说，闭包=函数+引用环境。 首先我们来看一个例子：
 
-func adder() func(int) int {
-	var x int
+// func adder() func(int) int {
+// 	var x int
+// 	return func(y int) int {
+// 		x += y
+// 		return x
+// 	}
+// }
+// func main() {
+// 	var f = adder()
+// 	fmt.Println(f(10)) //10
+// 	fmt.Println(f(20)) //30
+// 	fmt.Println(f(30)) //60
+
+// 	f1 := adder()
+// 	fmt.Println(f1(40)) //40
+// 	fmt.Println(f1(50)) //90
+// }
+
+// 变量f是一个函数并且它引用了其外部作用域中的x变量，此时f就是一个闭包。
+// 在f的生命周期内，变量x也一直有效。 闭包进阶示例1：
+func adder2(x int) func(int) int {
 	return func(y int) int {
 		x += y
 		return x
 	}
 }
 func main() {
-	var f = adder()
-	fmt.Println(f(10)) //10
-	fmt.Println(f(20)) //30
-	fmt.Println(f(30)) //60
+	var f = adder2(10)
+	fmt.Println(f(10)) //20
+	fmt.Println(f(20)) //40
+	fmt.Println(f(30)) //70
 
-	f1 := adder()
-	fmt.Println(f1(40)) //40
-	fmt.Println(f1(50)) //90
+	f1 := adder2(20)
+	fmt.Println(f1(40)) //60
+	fmt.Println(f1(50)) //110
 }
