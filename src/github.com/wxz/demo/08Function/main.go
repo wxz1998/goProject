@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // func main() {
 // sayHello()
 // ret := intSum(10, 20)
@@ -438,11 +440,7 @@ package main
 // 	distribution = make(map[string]int, len(users))
 // )
 
-// func main() {
-// 	left := dispatchCoin()
-// 	fmt.Println("剩下：", left)
-// }
-package main
-func main(){
-	fmt.Println()
+func main() {
+	left := dispatchCoin()
+	fmt.Println("剩下：", left)
 }
