@@ -79,11 +79,22 @@ import "fmt"
 // *Type表示类型指针，new函数返回一个指向该类型内存地址的指针。
 
 // new函数不太常用，使用new函数得到的是一个类型的指针，并且该指针对应的值为该类型的零值。
+// func main() {
+// 	a := new(int)
+// 	b := new(bool)
+// 	fmt.Printf("%T\n", a) // *int
+// 	fmt.Printf("%T\n", b) // *bool
+// 	fmt.Println(*a)       // 0
+// 	fmt.Println(*b)       // false
+// }
+
+// 本节开始的示例代码中var a *int只是声明了一个指针变量a但是没有初始化，
+// 指针作为引用类型需要初始化后才会拥有内存空间，才可以给它赋值。
+// 应该按照如下方式使用内置的new函数对a进行初始化之后就可以正常对其赋值了：
+
 func main() {
-	a := new(int)
-	b := new(bool)
-	fmt.Printf("%T\n", a) // *int
-	fmt.Printf("%T\n", b) // *bool
-	fmt.Println(*a)       // 0
-	fmt.Println(*b)       // false
+	var a *int
+	a = new(int)
+	*a = 10
+	fmt.Println(*a)
 }
