@@ -98,3 +98,10 @@ func main() {
 	*a = 10
 	fmt.Println(*a)
 }
+
+// make
+// make也是用于内存分配的，区别于new，它只用于slice、map以及chan的内存创建，
+// 而且它返回的类型就是这三个类型本身，而不是他们的指针类型，因为这三种类型就是引用类型，
+// 所以就没有必要返回他们的指针了。make函数的函数签名如下：
+
+// func make(t Type, size ...IntegerType) Type
