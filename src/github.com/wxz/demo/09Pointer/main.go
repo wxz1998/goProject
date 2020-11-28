@@ -92,12 +92,12 @@ import "fmt"
 // 指针作为引用类型需要初始化后才会拥有内存空间，才可以给它赋值。
 // 应该按照如下方式使用内置的new函数对a进行初始化之后就可以正常对其赋值了：
 
-func main() {
-	var a *int
-	a = new(int)
-	*a = 10
-	fmt.Println(*a)
-}
+// func main() {
+// 	var a *int
+// 	a = new(int)
+// 	*a = 10
+// 	fmt.Println(*a)
+// }
 
 // make
 // make也是用于内存分配的，区别于new，它只用于slice、map以及chan的内存创建，
@@ -111,3 +111,9 @@ func main() {
 
 // 本节开始的示例中var b map[string]int只是声明变量b是一个map类型的变量，
 // 需要像下面的示例代码一样使用make函数进行初始化操作之后，才能对其进行键值对赋值：
+func main() {
+	var b map[string]int
+	b = make(map[string]int, 10)
+	b["沙河娜扎"] = 100
+	fmt.Println(b)
+}
