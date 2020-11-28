@@ -52,15 +52,15 @@ import "fmt"
 
 // new和make
 
-func main() {
-	var a *int
-	*a = 100
-	fmt.Println(*a)
+// func main() {
+// 	var a *int
+// 	*a = 100
+// 	fmt.Println(*a)
 
-	var b map[string]int
-	b["沙河娜扎"] = 100
-	fmt.Println(b)
-}
+// 	var b map[string]int
+// 	b["沙河娜扎"] = 100
+// 	fmt.Println(b)
+// }
 
 // 执行上面的代码会引发panic，为什么呢？
 // 在Go语言中对于引用类型的变量，我们在使用的时候不仅要声明它，还要为它分配内存空间，否则我们的值就没办法存储。
@@ -77,3 +77,13 @@ func main() {
 
 // Type表示类型，new函数只接受一个参数，这个参数是一个类型
 // *Type表示类型指针，new函数返回一个指向该类型内存地址的指针。
+
+// new函数不太常用，使用new函数得到的是一个类型的指针，并且该指针对应的值为该类型的零值。
+func main() {
+	a := new(int)
+	b := new(bool)
+	fmt.Printf("%T\n", a) // *int
+	fmt.Printf("%T\n", b) // *bool
+	fmt.Println(*a)       // 0
+	fmt.Println(*b)       // false
+}
