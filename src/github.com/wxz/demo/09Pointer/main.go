@@ -34,18 +34,30 @@ import "fmt"
 
 // 指针传值示例：
 
-func modify1(x int) {
-	x = 100
-}
+// func modify1(x int) {
+// 	x = 100
+// }
 
-func modify2(x *int) {
-	*x = 100
-}
+// func modify2(x *int) {
+// 	*x = 100
+// }
+
+// func main() {
+// 	a := 10
+// 	modify1(a)
+// 	fmt.Println(a) // 10
+// 	modify2(&a)
+// 	fmt.Println(a) // 100
+// }
+
+// new和make
 
 func main() {
-	a := 10
-	modify1(a)
-	fmt.Println(a) // 10
-	modify2(&a)
-	fmt.Println(a) // 100
+	var a *int
+	*a = 100
+	fmt.Println(*a)
+
+	var b map[string]int
+	b["沙河娜扎"] = 100
+	fmt.Println(b)
 }
