@@ -2,10 +2,6 @@ package main
 
 import "fmt"
 
-func main() {
-	fmt.Println()
-}
-
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -26,3 +22,22 @@ func main() {
 
 // type byte = uint8
 // type rune = int32
+
+// 类型定义和类型别名的区别
+// 类型别名与类型定义表面上看只有一个等号的差异，我们通过下面的这段代码来理解它们之间的区别。
+
+//类型定义
+type NewInt int
+
+//类型别名
+type MyInt = int
+
+func main() {
+	var a NewInt
+	var b MyInt
+
+	fmt.Printf("type of a:%T\n", a) //type of a:main.NewInt
+	fmt.Printf("type of b:%T\n", b) //type of b:int
+}
+
+// 结果显示a的类型是main.NewInt，表示main包下定义的NewInt类型。b的类型是int。MyInt类型只会在代码中存在，编译完成时并不会有MyInt类型。
