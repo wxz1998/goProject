@@ -622,7 +622,7 @@ import (
 // 学生有id、姓名、年龄、分数等信息
 // 程序提供展示学生列表、添加学生、编辑学生信息、删除学生等功能
 
-//每个学生的信息
+// 每个学生的信息
 type Student struct {
 	Name string
 	Age  int
