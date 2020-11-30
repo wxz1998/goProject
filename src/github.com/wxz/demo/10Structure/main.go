@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -97,3 +99,12 @@ package main
 
 // 匿名结构体
 // 在定义一些临时数据结构等场景下还可以使用匿名结构体。
+func main() {
+	var user struct {
+		Name string
+		Age  int
+	}
+	user.Name = "小王子"
+	user.Age = 18
+	fmt.Printf("%#v\n", user)
+}
