@@ -1,10 +1,5 @@
 package main
 
-import (
-	"encoding/json"
-	"fmt"
-)
-
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -563,26 +558,26 @@ import (
 
 // 例如我们为Student结构体的每个字段定义json序列化时使用的Tag：
 
-//Student 学生
-type Student struct {
-	ID     int    `json:"id"` //通过指定tag实现json序列化该字段时的key
-	Gender string //json序列化是默认使用字段名作为key
-	name   string //私有不能被json包访问
-}
+// //Student 学生
+// type Student struct {
+// 	ID     int    `json:"id"` //通过指定tag实现json序列化该字段时的key
+// 	Gender string //json序列化是默认使用字段名作为key
+// 	name   string //私有不能被json包访问
+// }
 
-func main() {
-	s1 := Student{
-		ID:     1,
-		Gender: "男",
-		name:   "沙河娜扎",
-	}
-	data, err := json.Marshal(s1)
-	if err != nil {
-		fmt.Println("json marshal failed!")
-		return
-	}
-	fmt.Printf("json str:%s\n", data) //json str:{"id":1,"Gender":"男"}
-}
+// func main() {
+// 	s1 := Student{
+// 		ID:     1,
+// 		Gender: "男",
+// 		name:   "沙河娜扎",
+// 	}
+// 	data, err := json.Marshal(s1)
+// 	if err != nil {
+// 		fmt.Println("json marshal failed!")
+// 		return
+// 	}
+// 	fmt.Printf("json str:%s\n", data) //json str:{"id":1,"Gender":"男"}
+// }
 
 // 结构体和方法补充知识点
 // 因为slice和map这两种数据类型都包含了指向底层数据的指针，因此我们在需要复制它们时要特别注意。我们来看下面的例子：
