@@ -65,3 +65,10 @@ func main() {
 // 	city string
 // 	age  int8
 // }
+
+// 同样类型的字段也可以写在一行，
+
+// type person1 struct {
+// 	name, city string
+// 	age        int8
+// }
