@@ -132,3 +132,4 @@ package main
 // p3.age = 30
 // p3.city = "成都"
 // fmt.Printf("p3=%#v\n", p3) //p3=&main.person{name:"七米", city:"成都", age:30}
+// p3.name = "七米"其实在底层是(*p3).name = "七米"，这是Go语言帮我们实现的语法糖。
