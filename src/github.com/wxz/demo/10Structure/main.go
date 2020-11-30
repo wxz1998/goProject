@@ -157,3 +157,15 @@ package main
 // fmt.Printf("p5=%#v\n", p5) //p5=main.person{name:"小王子", city:"北京", age:18}
 
 // 也可以对结构体指针进行键值对初始化，例如：
+// p6 := &person{
+// 	name: "小王子",
+// 	city: "北京",
+// 	age:  18,
+// }
+// fmt.Printf("p6=%#v\n", p6) //p6=&main.person{name:"小王子", city:"北京", age:18}
+// 当某些字段没有初始值的时候，该字段可以不写。此时，没有指定初始值的字段的值就是该字段类型的零值。
+
+// p7 := &person{
+// 	city: "北京",
+// }
+// fmt.Printf("p7=%#v\n", p7) //p7=&main.person{name:"", city:"北京", age:0}
