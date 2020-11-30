@@ -208,3 +208,9 @@ package main
 // n.c 0xc0000a0062
 // n.d 0xc0000a0063
 // 【进阶知识点】关于Go语言中的内存对齐推荐阅读:在 Go 中恰到好处的内存对齐
+
+// 空结构体
+// 空结构体是不占用空间的。
+
+// var v struct{}
+// fmt.Println(unsafe.Sizeof(v))  // 0
