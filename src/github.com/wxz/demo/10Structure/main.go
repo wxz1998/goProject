@@ -28,19 +28,19 @@ import "fmt"
 
 //类型定义
 
-type NewInt int
+// type NewInt int
 
 //类型别名
 
-type MyInt = int
+// type MyInt = int
 
-func main() {
-	var a NewInt
-	var b MyInt
+// func main() {
+// 	var a NewInt
+// 	var b MyInt
 
-	fmt.Printf("type of a:%T\n", a) //type of a:main.NewInt
-	fmt.Printf("type of b:%T\n", b) //type of b:int
-}
+// 	fmt.Printf("type of a:%T\n", a) //type of a:main.NewInt
+// 	fmt.Printf("type of b:%T\n", b) //type of b:int
+// }
 
 // 结果显示a的类型是main.NewInt，表示main包下定义的NewInt类型。b的类型是int。MyInt类型只会在代码中存在，编译完成时并不会有MyInt类型。
 
@@ -80,3 +80,17 @@ func main() {
 // 比如一个人有名字、年龄和居住城市等，本质上是一种聚合型的数据类型
 
 // 基本实例化
+type person struct {
+	name string
+	city string
+	age  int8
+}
+
+func main() {
+	var p1 person
+	p1.name = "沙河娜扎"
+	p1.city = "北京"
+	p1.age = 18
+	fmt.Printf("p1=%v\n", p1)  //p1={沙河娜扎 北京 18}
+	fmt.Printf("p1=%#v\n", p1) //p1=main.person{name:"沙河娜扎", city:"北京", age:18}
+}
