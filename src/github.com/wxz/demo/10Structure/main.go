@@ -149,3 +149,9 @@ package main
 
 // 使用键值对初始化
 // 使用键值对对结构体进行初始化时，键对应结构体的字段，值对应该字段的初始值。
+p5 := person{
+	name: "小王子",
+	city: "北京",
+	age:  18,
+}
+fmt.Printf("p5=%#v\n", p5) //p5=main.person{name:"小王子", city:"北京", age:18}
