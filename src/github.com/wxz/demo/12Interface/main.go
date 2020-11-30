@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // func main() {
 // 	var x Sayer // 声明一个Sayer类型的变量x
 // 	a := cat{}  // 实例化一个cat
@@ -46,3 +48,8 @@ type Mover interface {
 }
 
 type dog struct{}
+
+// 值接收者实现接口
+func (d dog) move() {
+	fmt.Println("狗会动")
+}
