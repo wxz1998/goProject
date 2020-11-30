@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -138,13 +136,13 @@ import "fmt"
 
 // 结构体初始化
 // 没有初始化的结构体，其成员变量都是对应其类型的零值。
-type person struct {
-	name string
-	city string
-	age  int8
-}
+// type person struct {
+// 	name string
+// 	city string
+// 	age  int8
+// }
 
-func main() {
-	var p4 person
-	fmt.Printf("p4=%#v\n", p4) //p4=main.person{name:"", city:"", age:0}
-}
+// func main() {
+// 	var p4 person
+// 	fmt.Printf("p4=%#v\n", p4) //p4=main.person{name:"", city:"", age:0}
+// }
