@@ -146,3 +146,6 @@ package main
 // 	var p4 person
 // 	fmt.Printf("p4=%#v\n", p4) //p4=main.person{name:"", city:"", age:0}
 // }
+
+// 使用键值对初始化
+// 使用键值对对结构体进行初始化时，键对应结构体的字段，值对应该字段的初始值。
