@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -80,20 +78,20 @@ import "fmt"
 // 比如一个人有名字、年龄和居住城市等，本质上是一种聚合型的数据类型
 
 // 基本实例化
-type person struct {
-	name string
-	city string
-	age  int8
-}
+// type person struct {
+// 	name string
+// 	city string
+// 	age  int8
+// }
 
-func main() {
-	var p1 person
-	p1.name = "沙河娜扎"
-	p1.city = "北京"
-	p1.age = 18
-	fmt.Printf("p1=%v\n", p1)  //p1={沙河娜扎 北京 18}
-	fmt.Printf("p1=%#v\n", p1) //p1=main.person{name:"沙河娜扎", city:"北京", age:18}
-}
+// func main() {
+// 	var p1 person
+// 	p1.name = "沙河娜扎"
+// 	p1.city = "北京"
+// 	p1.age = 18
+// 	fmt.Printf("p1=%v\n", p1)  //p1={沙河娜扎 北京 18}
+// 	fmt.Printf("p1=%#v\n", p1) //p1=main.person{name:"沙河娜扎", city:"北京", age:18}
+// }
 
 // 我们通过.来访问结构体的字段（成员变量）,例如p1.name和p1.age等。
 
