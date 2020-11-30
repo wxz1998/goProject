@@ -42,3 +42,24 @@
 // 	var Age = 18 // 函数局部变量，外部包不可见，只能在当前函数内使用
 // 	fmt.Println(Age)
 // }
+
+// 单行导入方式定义别名：
+
+// import "fmt"
+// import m "github.com/Q1mi/studygo/pkg_test"
+
+// func main() {
+// 	fmt.Println(m.Add(100, 200))
+// 	fmt.Println(m.Mode)
+// }
+// 多行导入方式定义别名：
+
+// import (
+//     "fmt"
+//     m "github.com/Q1mi/studygo/pkg_test"
+//  )
+
+// func main() {
+// 	fmt.Println(m.Add(100, 200))
+// 	fmt.Println(m.Mode)
+// }
