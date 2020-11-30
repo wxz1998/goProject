@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -313,3 +315,20 @@ package main
 // 	p1.SetAge(30)
 // 	fmt.Println(p1.age) // 30
 // }
+
+// 值类型的接收者
+// 当方法作用于值类型接收者时，Go语言会在代码运行时将接收者的值复制一份。在值类型接收者的方法中可以获取接收者的成员值，但修改操作只是针对副本，无法修改接收者变量本身。
+
+// SetAge2 设置p的年龄
+// 使用值接收者
+func (p Person) SetAge2(newAge int8) {
+	p.age = newAge
+}
+
+func main() {
+	p1 := NewPerson("小王子", 25)
+	p1.Dream()
+	fmt.Println(p1.age) // 25
+	p1.SetAge2(30)      // (*p1).SetAge2(30)
+	fmt.Println(p1.age) // 25
+}
