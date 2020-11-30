@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -303,15 +301,15 @@ import "fmt"
 
 // SetAge 设置p的年龄
 // 使用指针接收者
-func (p *Person) SetAge(newAge int8) {
-	p.age = newAge
-}
+// func (p *Person) SetAge(newAge int8) {
+// 	p.age = newAge
+// }
 
-// 调用该方法：
+// // 调用该方法：
 
-func main() {
-	p1 := NewPerson("小王子", 25)
-	fmt.Println(p1.age) // 25
-	p1.SetAge(30)
-	fmt.Println(p1.age) // 30
-}
+// func main() {
+// 	p1 := NewPerson("小王子", 25)
+// 	fmt.Println(p1.age) // 25
+// 	p1.SetAge(30)
+// 	fmt.Println(p1.age) // 30
+// }
