@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -294,3 +296,22 @@ package main
 // 	p1.Dream()
 // }
 // 方法与函数的区别是，函数不属于任何类型，方法属于特定的类型。
+
+// 指针类型的接收者
+// 指针类型的接收者由一个结构体的指针组成，由于指针的特性，调用方法时修改接收者指针的任意成员变量，在方法结束后，修改都是有效的。
+// 这种方式就十分接近于其他语言中面向对象中的this或者self。 例如我们为Person添加一个SetAge方法，来修改实例变量的年龄。
+
+// SetAge 设置p的年龄
+// 使用指针接收者
+func (p *Person) SetAge(newAge int8) {
+	p.age = newAge
+}
+
+// 调用该方法：
+
+func main() {
+	p1 := NewPerson("小王子", 25)
+	fmt.Println(p1.age) // 25
+	p1.SetAge(30)
+	fmt.Println(p1.age) // 30
+}
