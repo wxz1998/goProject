@@ -426,7 +426,7 @@ func main() {
 	var user2 User
 	user2.Name = "小王子"
 	user2.Gender = "男"
-	user2.Address.Province = "山东"    // 匿名字段默认使用类型名作为字段名
+	user2.Address.Province = "山东"    // 匿名字段默认使用类型名作为字段名 可以省略 见下
 	user2.City = "威海"                // 匿名字段可以省略
 	fmt.Printf("user2=%#v\n", user2) //user2=main.User{Name:"小王子", Gender:"男", Address:main.Address{Province:"山东", City:"威海"}}
 }
