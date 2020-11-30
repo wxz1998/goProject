@@ -434,20 +434,20 @@ package main
 // 嵌套结构体的字段名冲突
 // 嵌套结构体内部可能存在相同的字段名。在这种情况下为了避免歧义需要通过指定具体的内嵌结构体字段名。
 
-// //Address 地址结构体
+//Address 地址结构体
 // type Address struct {
 // 	Province   string
 // 	City       string
 // 	CreateTime string
 // }
 
-// //Email 邮箱结构体
+//Email 邮箱结构体
 // type Email struct {
 // 	Account    string
 // 	CreateTime string
 // }
 
-// //User 用户结构体
+//User 用户结构体
 // type User struct {
 // 	Name   string
 // 	Gender string
@@ -463,6 +463,7 @@ package main
 // 	user3.Address.CreateTime = "2000" //指定Address结构体中的CreateTime
 // 	user3.Email.CreateTime = "2000"   //指定Email结构体中的CreateTime
 // }
+
 // 结构体的“继承”
 // Go语言中使用结构体也可以实现其他编程语言中面向对象的继承。
 
