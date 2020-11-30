@@ -401,6 +401,7 @@ package main
 // 	}
 // 	fmt.Printf("user1=%#v\n", user1)//user1=main.User{Name:"小王子", Gender:"男", Address:main.Address{Province:"山东", City:"威海"}}
 // }
+
 // 嵌套匿名字段
 // 上面user结构体中嵌套的Address结构体也可以采用匿名字段的方式，例如：
 
