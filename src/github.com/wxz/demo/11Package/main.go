@@ -17,27 +17,28 @@
 // 在Go语言中只需要将标识符的首字母大写就可以让标识符对外可见了。
 
 // 举个例子， 我们定义一个包名为pkg2的包，代码如下：
-package pkg2
 
-import "fmt"
+// package pkg2
 
-// 包变量可见性
+// import "fmt"
 
-var a = 100 // 首字母小写，外部包不可见，只能在当前包内使用
+// // 包变量可见性
 
-// 首字母大写外部包可见，可在其他包中使用
-const Mode = 1
+// var a = 100 // 首字母小写，外部包不可见，只能在当前包内使用
 
-type person struct { // 首字母小写，外部包不可见，只能在当前包内使用
-	name string
-}
+// // 首字母大写外部包可见，可在其他包中使用
+// const Mode = 1
 
-// 首字母大写，外部包可见，可在其他包中使用
-func Add(x, y int) int {
-	return x + y
-}
+// type person struct { // 首字母小写，外部包不可见，只能在当前包内使用
+// 	name string
+// }
 
-func age() { // 首字母小写，外部包不可见，只能在当前包内使用
-	var Age = 18 // 函数局部变量，外部包不可见，只能在当前函数内使用
-	fmt.Println(Age)
-}
+// // 首字母大写，外部包可见，可在其他包中使用
+// func Add(x, y int) int {
+// 	return x + y
+// }
+
+// func age() { // 首字母小写，外部包不可见，只能在当前包内使用
+// 	var Age = 18 // 函数局部变量，外部包不可见，只能在当前函数内使用
+// 	fmt.Println(Age)
+// }
