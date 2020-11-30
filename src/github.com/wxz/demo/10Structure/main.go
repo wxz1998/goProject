@@ -122,3 +122,6 @@ package main
 // p2.age = 28
 // p2.city = "上海"
 // fmt.Printf("p2=%#v\n", p2) //p2=&main.person{name:"小王子", city:"上海", age:28}
+
+// 取结构体的地址实例化
+// 使用&对结构体进行取地址操作相当于对该结构体类型进行了一次new实例化操作。
