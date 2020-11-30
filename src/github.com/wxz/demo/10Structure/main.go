@@ -94,3 +94,5 @@ func main() {
 	fmt.Printf("p1=%v\n", p1)  //p1={沙河娜扎 北京 18}
 	fmt.Printf("p1=%#v\n", p1) //p1=main.person{name:"沙河娜扎", city:"北京", age:18}
 }
+
+// 我们通过.来访问结构体的字段（成员变量）,例如p1.name和p1.age等。
