@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -616,6 +621,7 @@ package main
 // 学生有id、姓名、年龄、分数等信息
 // 程序提供展示学生列表、添加学生、编辑学生信息、删除学生等功能
 
+// 方案1
 // // 每个学生的信息
 // type Student struct {
 // 	Name string
@@ -736,3 +742,118 @@ package main
 // 		executeChoice(choice)
 // 	}
 // }
+
+// 方案2
+type student struct {
+	id    int
+	name  string
+	age   int
+	score float64
+}
+
+type teacher struct {
+	students map[int]student
+}
+
+func config() *teacher {
+	//teacher config
+	t := new(teacher)
+	t.students = make(map[int]student, 10)
+	return t
+}
+
+func showMenu() {
+	fmt.Println(`欢迎，请选择
+	1.显示
+	2.添加
+	3.编辑
+	4.删除
+	0.退出
+	`)
+}
+
+func (t *teacher) showAll() {
+	if len(t.students) == 0 {
+		fmt.Println("无学生")
+		return
+	}
+	for _, v := range t.students {
+		fmt.Printf("id:%v,name:%v,age:%v,score:%v \n", v.id, v.name, v.age, v.score)
+	}
+}
+
+func (t *teacher) add() {
+	student := new(student)
+	fmt.Print("输入ID：")
+	fmt.Scanln(&student.id)
+	fmt.Print("输入name：")
+	fmt.Scanln(&student.name)
+	fmt.Print("输入age：")
+	fmt.Scanln(&student.age)
+	fmt.Print("输入score：")
+	fmt.Scanln(&student.score)
+
+	t.students[student.id] = *student
+	fmt.Println("添加成功~~")
+}
+
+func (t *teacher) edit() {
+	var id int
+	fmt.Print("输入ID：")
+	fmt.Scanln(&id)
+	student, ok := t.students[id]
+	if !ok {
+		fmt.Println("没有这学生~~")
+		return
+	}
+	fmt.Print("输入name：")
+	fmt.Scanln(&student.name)
+	fmt.Print("输入age：")
+	fmt.Scanln(&student.age)
+	fmt.Print("输入score：")
+	fmt.Scanln(&student.score)
+	t.students[id] = student
+
+	fmt.Println("编辑成功~~")
+}
+
+func (t *teacher) del() {
+	var id int
+	fmt.Print("输入ID：")
+	fmt.Scanln(&id)
+	_, ok := t.students[id]
+	if !ok {
+		fmt.Println("没有这学生~~")
+		return
+	}
+	delete(t.students, id)
+
+	fmt.Println("删除成功~~")
+}
+
+func excute(t *teacher, chose int) {
+	switch chose {
+	case 1:
+		t.showAll()
+	case 2:
+		t.add()
+	case 3:
+		t.edit()
+	case 4:
+		t.del()
+	case 0:
+		os.Exit(1)
+	default:
+		fmt.Println("无效输入~~")
+	}
+}
+
+func main() {
+	teacher := config()
+	for {
+		showMenu()
+		var chose int
+		fmt.Scanln(&chose)
+		excute(teacher, chose)
+	}
+}
