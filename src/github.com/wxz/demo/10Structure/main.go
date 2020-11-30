@@ -72,3 +72,6 @@ func main() {
 // 	name, city string
 // 	age        int8
 // }
+
+// 这样我们就拥有了一个person的自定义类型，它有name、city、age三个字段，分别表示姓名、城市和年龄。
+// 这样我们使用这个person结构体就能够很方便的在程序中表示和存储人信息了。
