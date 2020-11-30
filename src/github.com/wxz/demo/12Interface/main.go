@@ -29,3 +29,12 @@ func (d dog) say() {
 func (c cat) say() {
 	fmt.Println("喵喵喵")
 }
+
+// Tips： 观察下面的代码，体味此处_的妙用
+
+// // 摘自gin框架routergroup.go
+// type IRouter interface{ ... }
+
+// type RouterGroup struct { ... }
+
+// var _ IRouter = &RouterGroup{}  // 确保RouterGroup实现了接口IRouter
