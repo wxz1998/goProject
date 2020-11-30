@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -377,30 +379,30 @@ package main
 // 嵌套结构体
 // 一个结构体中可以嵌套包含另一个结构体或结构体指针，就像下面的示例代码那样。
 
-// //Address 地址结构体
-// type Address struct {
-// 	Province string
-// 	City     string
-// }
+//Address 地址结构体
+type Address struct {
+	Province string
+	City     string
+}
 
-// //User 用户结构体
-// type User struct {
-// 	Name    string
-// 	Gender  string
-// 	Address Address
-// }
+//User 用户结构体
+type User struct {
+	Name    string
+	Gender  string
+	Address Address
+}
 
-// func main() {
-// 	user1 := User{
-// 		Name:   "小王子",
-// 		Gender: "男",
-// 		Address: Address{
-// 			Province: "山东",
-// 			City:     "威海",
-// 		},
-// 	}
-// 	fmt.Printf("user1=%#v\n", user1)//user1=main.User{Name:"小王子", Gender:"男", Address:main.Address{Province:"山东", City:"威海"}}
-// }
+func main() {
+	user1 := User{
+		Name:   "小王子",
+		Gender: "男",
+		Address: Address{ // 被嵌套的结构体
+			Province: "山东",
+			City:     "威海",
+		},
+	}
+	fmt.Printf("user1=%#v\n", user1) //user1=main.User{Name:"小王子", Gender:"男", Address:main.Address{Province:"山东", City:"威海"}}
+}
 
 // 嵌套匿名字段
 // 上面user结构体中嵌套的Address结构体也可以采用匿名字段的方式，例如：
