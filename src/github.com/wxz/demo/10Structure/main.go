@@ -1,5 +1,11 @@
 package main
 
+import (
+	"encoding/json"
+	"fmt"
+	"os"
+)
+
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -615,3 +621,126 @@ package main
 // 使用“面向对象”的思维方式编写一个学生信息管理系统。
 // 学生有id、姓名、年龄、分数等信息
 // 程序提供展示学生列表、添加学生、编辑学生信息、删除学生等功能
+
+//每个学生的信息
+type Student struct {
+	Name string
+	Age  int
+	ID   int
+}
+
+//学生构造函数
+func creatStudent(name string, age int, id int) *Student {
+	return &Student{
+		Name: name,
+		Age:  age,
+		ID:   id,
+	}
+}
+
+//方法 更新学生
+func (s *Student) updateStudent(name string, age int, id int) {
+	//传入的为地址才会进行修改,否则只是拷贝一份修改
+	s.Name = name
+	s.Age = age
+	s.ID = id
+}
+
+//学生map,需要存为map,可以根据id索引到对象
+var class = make(map[int]*Student, 200)
+
+func getAllStudent() {
+	for _, value := range class {
+		data, _ := json.Marshal(value)
+		fmt.Printf("%s\n", data)
+	}
+}
+func updateAllStudent() {
+	var name string
+	var age int
+	var id int
+	fmt.Println("请输入学号")
+	fmt.Scan(&id)
+	_, flag := class[id]
+	if flag {
+		fmt.Println("请输入姓名")
+		fmt.Scan(&name)
+		fmt.Println("请输入年龄")
+		fmt.Scan(&age)
+		class[id].updateStudent(name, age, id)
+	} else {
+		fmt.Println("学生不存在")
+	}
+
+}
+func addAllStudent() {
+	var name string
+	var age int
+	var id int
+	fmt.Println("请输入姓名")
+	fmt.Scan(&name)
+	fmt.Println("请输入年龄")
+	fmt.Scan(&age)
+	fmt.Println("请输入学号")
+	fmt.Scan(&id)
+	_, flag := class[id]
+	if flag {
+		fmt.Println("学号已存在,请重新输入信息")
+	} else {
+		//创建学生
+		stu := creatStudent(name, age, id)
+		//切片中加入这个元素
+		class[id] = stu
+	}
+
+}
+func deleteAllStudent() {
+	var id int
+	fmt.Println("请输入学号")
+	fmt.Scan(&id)
+	_, flag := class[id]
+	if flag {
+		delete(class, id)
+		fmt.Println("删除成功")
+	} else {
+		fmt.Println("学号不存在,请重新输入")
+	}
+
+}
+func exitAllStudent() {
+	os.Exit(1)
+}
+
+func executeChoice(choice int) {
+	switch choice {
+	case 1:
+		getAllStudent()
+	case 2:
+		addAllStudent()
+	case 3:
+		updateAllStudent()
+	case 4:
+		deleteAllStudent()
+	case 5:
+		exitAllStudent()
+	default:
+		fmt.Println("输入错误,请重新输入")
+
+	}
+}
+func main() {
+	var choice int
+	for {
+		fmt.Printf(`	
+	1、查看所有学生
+	2、添加学生
+	3、修改学生
+	4、删除学生
+	5、退出系统`)
+		fmt.Println()
+		fmt.Scan(&choice)
+		executeChoice(choice)
+
+	}
+
+}
