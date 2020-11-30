@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 自定义类型
 // 在Go语言中有一些基本的数据类型，如string、整型、浮点型、布尔等数据类型， Go语言中可以使用type关键字来定义自定义类型。
 
@@ -410,26 +408,26 @@ import "fmt"
 // 上面user结构体中嵌套的Address结构体也可以采用匿名字段的方式，例如：
 
 //Address 地址结构体
-type Address struct {
-	Province string
-	City     string
-}
+// type Address struct {
+// 	Province string
+// 	City     string
+// }
 
 //User 用户结构体
-type User struct {
-	Name    string
-	Gender  string
-	Address //匿名字段
-}
+// type User struct {
+// 	Name    string
+// 	Gender  string
+// 	Address //匿名字段
+// }
 
-func main() {
-	var user2 User
-	user2.Name = "小王子"
-	user2.Gender = "男"
-	user2.Address.Province = "山东"    // 匿名字段默认使用类型名作为字段名 可以省略 见下
-	user2.City = "威海"                // 匿名字段可以省略
-	fmt.Printf("user2=%#v\n", user2) //user2=main.User{Name:"小王子", Gender:"男", Address:main.Address{Province:"山东", City:"威海"}}
-}
+// func main() {
+// 	var user2 User
+// 	user2.Name = "小王子"
+// 	user2.Gender = "男"
+// 	user2.Address.Province = "山东"    // 匿名字段默认使用类型名作为字段名 可以省略 见下
+// 	user2.City = "威海"                // 匿名字段可以省略
+// 	fmt.Printf("user2=%#v\n", user2) //user2=main.User{Name:"小王子", Gender:"男", Address:main.Address{Province:"山东", City:"威海"}}
+// }
 
 // 当访问结构体成员时会先在结构体中查找该字段，找不到再去嵌套的匿名字段中查找。
 
