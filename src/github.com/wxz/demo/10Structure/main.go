@@ -113,3 +113,7 @@ package main
 // var p2 = new(person)
 // fmt.Printf("%T\n", p2)     //*main.person
 // fmt.Printf("p2=%#v\n", p2) //p2=&main.person{name:"", city:"", age:0}
+
+// 从打印的结果中我们可以看出p2是一个结构体指针。
+
+// 需要注意的是在Go语言中支持对结构体指针直接使用.来访问结构体的成员。
