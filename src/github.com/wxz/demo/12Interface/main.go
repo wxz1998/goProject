@@ -6,7 +6,7 @@ import "fmt"
  * @Author: zut.wxz
  * @Date: 2020-11-30 18:11:19
  * @LastEditors: zut.wxz
- * @LastEditTime: 2020-12-02 15:07:52
+ * @LastEditTime: 2020-12-02 15:09:17
  * @Description:
  */
 
@@ -160,39 +160,79 @@ import "fmt"
 // 多个类型实现同一接口
 // Go语言中不同的类型还可以实现同一接口 首先我们定义一个Mover接口，它要求必须由一个move方法。
 
+// // Mover 接口
+// type Mover interface {
+// 	move()
+// }
+
+// // 例如狗可以动，汽车也可以动，可以使用如下代码实现这个关系：
+
+// type dog struct {
+// 	name string
+// }
+
+// type car struct {
+// 	brand string
+// }
+
+// // dog类型实现Mover接口
+// func (d dog) move() {
+// 	fmt.Printf("%s会跑\n", d.name)
+// }
+
+// // car类型实现Mover接口
+// func (c car) move() {
+// 	fmt.Printf("%s速度70迈\n", c.brand)
+// }
+
+// // 这个时候我们在代码中就可以把狗和汽车当成一个会动的物体来处理了，不再需要关注它们具体是什么，只需要调用它们的move方法就可以了。
+
+// func main() {
+// 	var x Mover
+// 	var a = dog{name: "旺财"}
+// 	var b = car{brand: "保时捷"}
+// 	x = a
+// 	x.move()
+// 	x = b
+// 	x.move()
+// }
+
+// 接口嵌套
+// 接口与接口间可以通过嵌套创造出新的接口。
+
+// Sayer 接口
+type Sayer interface {
+	say()
+}
+
 // Mover 接口
 type Mover interface {
 	move()
 }
 
-// 例如狗可以动，汽车也可以动，可以使用如下代码实现这个关系：
+// 接口嵌套
+type animal interface {
+	Sayer
+	Mover
+}
 
-type dog struct {
+// 嵌套得到的接口的使用与普通接口一样，这里我们让cat实现animal接口：
+
+type cat struct {
 	name string
 }
 
-type car struct {
-	brand string
+func (c cat) say() {
+	fmt.Println("喵喵喵")
 }
 
-// dog类型实现Mover接口
-func (d dog) move() {
-	fmt.Printf("%s会跑\n", d.name)
+func (c cat) move() {
+	fmt.Println("猫会动")
 }
-
-// car类型实现Mover接口
-func (c car) move() {
-	fmt.Printf("%s速度70迈\n", c.brand)
-}
-
-// 这个时候我们在代码中就可以把狗和汽车当成一个会动的物体来处理了，不再需要关注它们具体是什么，只需要调用它们的move方法就可以了。
 
 func main() {
-	var x Mover
-	var a = dog{name: "旺财"}
-	var b = car{brand: "保时捷"}
-	x = a
+	var x animal
+	x = cat{name: "花花"}
 	x.move()
-	x = b
-	x.move()
+	x.say()
 }
