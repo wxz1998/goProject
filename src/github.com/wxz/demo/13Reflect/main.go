@@ -4,7 +4,7 @@ package main
  * @Author: zut.wxz
  * @Date: 2020-12-02 15:12:58
  * @LastEditors: zut.wxz
- * @LastEditTime: 2020-12-02 20:17:06
+ * @LastEditTime: 2020-12-02 20:18:10
  * @Description:
  */
 
@@ -100,16 +100,30 @@ func main() {
 	// 尝试从map中查找一个不存在的键
 	fmt.Println("map中不存在的键：", reflect.ValueOf(c).MapIndex(reflect.ValueOf("娜扎")).IsValid())
 }
-*/
 
-type StructField struct {
-	// Name是字段的名字。PkgPath是非导出字段的包路径，对导出字段该字段为""。
-	// 参见http://golang.org/ref/spec#Uniqueness_of_identifiers
-	Name      string
-	PkgPath   string
-	Type      Type      // 字段的类型
-	Tag       StructTag // 字段的标签
-	Offset    uintptr   // 字段在结构体中的字节偏移量
-	Index     []int     // 用于Type.FieldByIndex时的索引切片
-	Anonymous bool      // 是否匿名字段
+// 结构体反射
+type student struct {
+	Name  string `json:"name"`
+	Score int    `json:"score"`
 }
+
+func main() {
+	stu1 := student{
+		Name:  "小王子",
+		Score: 90,
+	}
+
+	t := reflect.TypeOf(stu1)
+	fmt.Println(t.Name(), t.Kind()) // student struct
+	// 通过for循环遍历结构体的所有字段信息
+	for i := 0; i < t.NumField(); i++ {
+		field := t.Field(i)
+		fmt.Printf("name:%s index:%d type:%v json tag:%v\n", field.Name, field.Index, field.Type, field.Tag.Get("json"))
+	}
+
+	// 通过字段名获取指定结构体字段信息
+	if scoreField, ok := t.FieldByName("Score"); ok {
+		fmt.Printf("name:%s index:%d type:%v json tag:%v\n", scoreField.Name, scoreField.Index, scoreField.Type, scoreField.Tag.Get("json"))
+	}
+}
+*/
