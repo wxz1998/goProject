@@ -4,7 +4,7 @@ package main
  * @Author: zut.wxz
  * @Date: 2020-11-30 18:11:19
  * @LastEditors: zut.wxz
- * @LastEditTime: 2020-12-02 12:19:37
+ * @LastEditTime: 2020-12-02 12:20:32
  * @Description:
  */
 
@@ -125,12 +125,7 @@ type Sayer interface {
 }
 
 // Mover 接口
-/**
- * @FunctionName:
- * @Description:
- * @Param:
- * @Return:
- */
+
 type Mover interface {
 	move()
 }
