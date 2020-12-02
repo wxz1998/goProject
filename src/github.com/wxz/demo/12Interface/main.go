@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // func main() {
 // 	var x Sayer // 声明一个Sayer类型的变量x
 // 	a := cat{}  // 实例化一个cat
@@ -88,23 +86,27 @@ import "fmt"
 // 注意：这是一道你需要回答"能"或者"不能"的题！
 
 // 首先请观察下面的这段代码，然后请回答这段代码能不能通过编译？
-type People interface {
-	Speak(string) string
-}
+// type People interface {
+// 	Speak(string) string
+// }
 
-type Student struct{}
+// type Student struct{}
 
-func (stu *Student) Speak(think string) (talk string) {
-	if think == "sb" {
-		talk = "你是个大帅比"
-	} else {
-		talk = "您好"
-	}
-	return
-}
+// func (stu *Student) Speak(think string) (talk string) {
+// 	if think == "sb" {
+// 		talk = "你是个大帅比"
+// 	} else {
+// 		talk = "您好"
+// 	}
+// 	return
+// }
 
-func main() {
-	var peo People = Student{}
-	think := "bitch"
-	fmt.Println(peo.Speak(think))
-}
+// func main() {
+// 	var peo People = Student{}
+// 	think := "bitch"
+// 	fmt.Println(peo.Speak(think))
+// }
+// 	var peo People = Student{}
+// 	think := "bitch"
+// 	fmt.Println(peo.Speak(think))
+// }
