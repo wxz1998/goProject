@@ -1,10 +1,12 @@
 package main
 
+import "fmt"
+
 /*
  * @Author: zut.wxz
  * @Date: 2020-11-30 18:11:19
  * @LastEditors: zut.wxz
- * @LastEditTime: 2020-12-02 15:04:19
+ * @LastEditTime: 2020-12-02 15:05:01
  * @Description:
  */
 
@@ -130,3 +132,27 @@ type Mover interface {
 }
 
 // dog既可以实现Sayer接口，也可以实现Mover接口。
+type dog struct {
+	name string
+}
+
+// 实现Sayer接口
+func (d dog) say() {
+	fmt.Printf("%s会叫汪汪汪\n", d.name)
+}
+
+// 实现Mover接口
+func (d dog) move() {
+	fmt.Printf("%s会动\n", d.name)
+}
+
+func main() {
+	var x Sayer
+	var y Mover
+
+	var a = dog{name: "旺财"}
+	x = a
+	y = a
+	x.say()
+	y.move()
+}
