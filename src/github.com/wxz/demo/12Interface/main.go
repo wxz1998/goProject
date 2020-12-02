@@ -6,7 +6,7 @@ import "fmt"
  * @Author: zut.wxz
  * @Date: 2020-11-30 18:11:19
  * @LastEditors: zut.wxz
- * @LastEditTime: 2020-12-02 15:06:49
+ * @LastEditTime: 2020-12-02 15:07:52
  * @Description:
  */
 
@@ -121,38 +121,78 @@ import "fmt"
 // 一个类型实现多个接口
 // 一个类型可以同时实现多个接口，而接口间彼此独立，不知道对方的实现。 例如，狗可以叫，也可以动。我们就分别定义Sayer接口和Mover接口，如下： Mover接口。
 
-// Sayer 接口
-type Sayer interface {
-	say()
-}
+// // Sayer 接口
+// type Sayer interface {
+// 	say()
+// }
+
+// // Mover 接口
+// type Mover interface {
+// 	move()
+// }
+
+// // dog既可以实现Sayer接口，也可以实现Mover接口。
+// type dog struct {
+// 	name string
+// }
+
+// // 实现Sayer接口
+// func (d dog) say() {
+// 	fmt.Printf("%s会叫汪汪汪\n", d.name)
+// }
+
+// // 实现Mover接口
+// func (d dog) move() {
+// 	fmt.Printf("%s会动\n", d.name)
+// }
+
+// func main() {
+// 	var x Sayer
+// 	var y Mover
+
+// 	var a = dog{name: "旺财"}
+// 	x = a
+// 	y = a
+// 	x.say()
+// 	y.move()
+// }
+
+// 多个类型实现同一接口
+// Go语言中不同的类型还可以实现同一接口 首先我们定义一个Mover接口，它要求必须由一个move方法。
 
 // Mover 接口
 type Mover interface {
 	move()
 }
 
-// dog既可以实现Sayer接口，也可以实现Mover接口。
+// 例如狗可以动，汽车也可以动，可以使用如下代码实现这个关系：
+
 type dog struct {
 	name string
 }
 
-// 实现Sayer接口
-func (d dog) say() {
-	fmt.Printf("%s会叫汪汪汪\n", d.name)
+type car struct {
+	brand string
 }
 
-// 实现Mover接口
+// dog类型实现Mover接口
 func (d dog) move() {
-	fmt.Printf("%s会动\n", d.name)
+	fmt.Printf("%s会跑\n", d.name)
 }
+
+// car类型实现Mover接口
+func (c car) move() {
+	fmt.Printf("%s速度70迈\n", c.brand)
+}
+
+// 这个时候我们在代码中就可以把狗和汽车当成一个会动的物体来处理了，不再需要关注它们具体是什么，只需要调用它们的move方法就可以了。
 
 func main() {
-	var x Sayer
-	var y Mover
-
+	var x Mover
 	var a = dog{name: "旺财"}
+	var b = car{brand: "保时捷"}
 	x = a
-	y = a
-	x.say()
-	y.move()
+	x.move()
+	x = b
+	x.move()
 }
