@@ -1,10 +1,15 @@
 package main
 
+import (
+	"fmt"
+	"reflect"
+)
+
 /*
  * @Author: zut.wxz
  * @Date: 2020-12-02 15:12:58
  * @LastEditors: zut.wxz
- * @LastEditTime: 2020-12-02 20:18:10
+ * @LastEditTime: 2020-12-02 20:52:24
  * @Description:
  */
 
@@ -100,6 +105,7 @@ func main() {
 	// 尝试从map中查找一个不存在的键
 	fmt.Println("map中不存在的键：", reflect.ValueOf(c).MapIndex(reflect.ValueOf("娜扎")).IsValid())
 }
+*/
 
 // 结构体反射
 type student struct {
@@ -126,4 +132,3 @@ func main() {
 		fmt.Printf("name:%s index:%d type:%v json tag:%v\n", scoreField.Name, scoreField.Index, scoreField.Type, scoreField.Tag.Get("json"))
 	}
 }
-*/
