@@ -1,5 +1,13 @@
 package main
 
+/*
+ * @Author: zut.wxz
+ * @Date: 2020-11-30 18:11:19
+ * @LastEditors: zut.wxz
+ * @LastEditTime: 2020-12-02 12:19:37
+ * @Description:
+ */
+
 // func main() {
 // 	var x Sayer // 声明一个Sayer类型的变量x
 // 	a := cat{}  // 实例化一个cat
@@ -117,6 +125,12 @@ type Sayer interface {
 }
 
 // Mover 接口
+/**
+ * @FunctionName:
+ * @Description:
+ * @Param:
+ * @Return:
+ */
 type Mover interface {
 	move()
 }
