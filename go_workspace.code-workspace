@@ -5,6 +5,6 @@
         }
     ],
     "settings": {
-        "workbench.settings.useSplitJSON": true
+        "workbench.settings.useSplitJSON": true,
     }
 }
