@@ -118,3 +118,19 @@ package main
 // 	think := "bitch"
 // 	fmt.Println(peo.Speak(think))
 // }
+// 	var peo People = Student{}
+// 	think := "bitch"
+// 	fmt.Println(peo.Speak(think))
+// }
+// 	var peo People = Student{}
+// 	think := "bitch"
+// 	fmt.Println(peo.Speak(think))
+// }
+// 	var peo People = Student{}
+// 	think := "bitch"
+// 	fmt.Println(peo.Speak(think))
+// }
+// 	var peo People = Student{}
+// 	think := "bitch"
+// 	fmt.Println(peo.Speak(think))
+// }
