@@ -6,7 +6,7 @@ import "fmt"
  * @Author: zut.wxz
  * @Date: 2020-11-30 18:11:19
  * @LastEditors: zut.wxz
- * @LastEditTime: 2020-12-02 15:09:17
+ * @LastEditTime: 2020-12-02 15:10:12
  * @Description:
  */
 
@@ -200,39 +200,59 @@ import "fmt"
 // 接口嵌套
 // 接口与接口间可以通过嵌套创造出新的接口。
 
-// Sayer 接口
-type Sayer interface {
-	say()
-}
+// // Sayer 接口
+// type Sayer interface {
+// 	say()
+// }
 
-// Mover 接口
-type Mover interface {
-	move()
-}
+// // Mover 接口
+// type Mover interface {
+// 	move()
+// }
 
-// 接口嵌套
-type animal interface {
-	Sayer
-	Mover
-}
+// // 接口嵌套
+// type animal interface {
+// 	Sayer
+// 	Mover
+// }
 
-// 嵌套得到的接口的使用与普通接口一样，这里我们让cat实现animal接口：
+// // 嵌套得到的接口的使用与普通接口一样，这里我们让cat实现animal接口：
 
-type cat struct {
-	name string
-}
+// type cat struct {
+// 	name string
+// }
 
-func (c cat) say() {
-	fmt.Println("喵喵喵")
-}
+// func (c cat) say() {
+// 	fmt.Println("喵喵喵")
+// }
 
-func (c cat) move() {
-	fmt.Println("猫会动")
-}
+// func (c cat) move() {
+// 	fmt.Println("猫会动")
+// }
+
+// func main() {
+// 	var x animal
+// 	x = cat{name: "花花"}
+// 	x.move()
+// 	x.say()
+// }
+
+// 空接口
+// 空接口的定义
+// 空接口是指没有定义任何方法的接口。因此任何类型都实现了空接口。
+
+// 空接口类型的变量可以存储任意类型的变量。
 
 func main() {
-	var x animal
-	x = cat{name: "花花"}
-	x.move()
-	x.say()
+	// 定义一个空接口x
+	var x interface{}
+	s := "Hello 沙河"
+	x = s
+	fmt.Printf("type:%T value:%v\n", x, x)
+	i := 100
+	x = i
+	fmt.Printf("type:%T value:%v\n", x, x)
+	b := true
+	x = b
+	fmt.Printf("type:%T value:%v\n", x, x)
 }
