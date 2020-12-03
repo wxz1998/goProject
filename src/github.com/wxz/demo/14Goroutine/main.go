@@ -6,7 +6,7 @@ import "fmt"
  * @Author: zut.wxz
  * @Date: 2020-12-03 21:08:03
  * @LastEditors: zut.wxz
- * @LastEditTime: 2020-12-03 22:35:17
+ * @LastEditTime: 2020-12-03 22:39:45
  * @Description:
  */
 
@@ -122,7 +122,6 @@ func counter(out chan<- int) {
 	}
 	close(out)
 }
-
 func squarer(out chan<- int, in <-chan int) {
 	for i := range in {
 		out <- i * i
@@ -134,7 +133,6 @@ func printer(in <-chan int) {
 		fmt.Println(i)
 	}
 }
-
 func main() {
 	ch1 := make(chan int)
 	ch2 := make(chan int)
