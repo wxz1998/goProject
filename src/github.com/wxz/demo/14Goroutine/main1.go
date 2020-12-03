@@ -2,17 +2,29 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 /*
  * @Author: zut.wxz
  * @Date: 2020-12-03 22:40:45
  * @LastEditors: zut.wxz
- * @LastEditTime: 2020-12-03 22:41:33
+ * @LastEditTime: 2020-12-03 22:51:09
  * @Description:
  */
 
+// select 多路复用
+func main() {
+	ch := make(chan int, 1)
+	for i := 0; i < 10; i++ {
+		select {
+		case x := <-ch:
+			fmt.Println(x)
+		case ch <- i:
+		}
+	}
+}
+
+/*
 func worker(id int, jobs <-chan int, results chan<- int) {
 	for j := range jobs {
 		fmt.Printf("worker:%d start job:%d\n", id, j)
@@ -39,3 +51,4 @@ func main() {
 		<-results
 	}
 }
+*/
