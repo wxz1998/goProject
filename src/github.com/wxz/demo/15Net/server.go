@@ -1,3 +1,11 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"net"
+)
+
 // TCP server端
 
 // 处理函数
