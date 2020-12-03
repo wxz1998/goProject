@@ -6,19 +6,5 @@
     ],
     "settings": {
         "workbench.settings.useSplitJSON": true,
-        "workbench.colorCustomizations": {
-            // activityBar左边扩展栏
-            "activityBar.background": "#A9A9A9",
-            "activityBar.foreground": "#000000",
-            // 当前活动的扩展栏
-            "activityBar.activeBackground": "#0000CD",
-            "activityBar.activeFocusBorder": "#FFFFFF",
-            // titleBar顶部活动栏
-            "titleBar.activeBackground": "#A9A9A9", // 背景颜色
-            "titleBar.activeForeground": "#000000", // 字体颜色
-            // statusBar底部状态栏
-            "statusBar.background": "#A9A9A9",
-            "statusBar.foreground": "#000000"
-        },
     }
 }
