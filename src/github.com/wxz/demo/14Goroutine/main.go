@@ -2,15 +2,13 @@ package main
 
 import (
 	"fmt"
-	"runtime"
-	"time"
 )
 
 /*
  * @Author: zut.wxz
  * @Date: 2020-12-03 21:08:03
  * @LastEditors: zut.wxz
- * @LastEditTime: 2020-12-03 21:45:31
+ * @LastEditTime: 2020-12-03 21:46:09
  * @Description:
  */
 
@@ -59,7 +57,7 @@ func main() {
 
 // channel 练习
 func main() {
-	runtime.GOMAXPROCS(2)
+	// runtime.GOMAXPROCS(2)
 	ch1 := make(chan int)
 	ch2 := make(chan int)
 	// 开启goroutine将0~100的数发送到ch1中
@@ -84,5 +82,5 @@ func main() {
 	for i := range ch2 { // 通道关闭后会退出for range循环
 		fmt.Println(i)
 	}
-	time.Sleep(time.Second)
+	// time.Sleep(time.Second)
 }
