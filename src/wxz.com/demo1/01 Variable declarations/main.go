@@ -4,6 +4,7 @@ import "fmt"
 
 var name = "wxz"
 
+// 常量声明
 const pi = 3.1415
 
 // 变量的声明方式
