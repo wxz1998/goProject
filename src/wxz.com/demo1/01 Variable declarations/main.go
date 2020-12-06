@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// go语言函数外的语句必须以关键字开头
 var name = "wxz"
 
 // 常量声明
