@@ -10,6 +10,7 @@ const pi = 3.1415
 
 // 变量的声明方式
 func main() {
+	// 赋值操作只能在函数体内
 	age := 18
 	fmt.Println(name, age)
 }
