@@ -17,4 +17,11 @@ func main() {
 	age := 18
 	fmt.Println(name, age, pi)
 	fmt.Println(name1, age1)
+	x, _ := test1()
+	_, y := test1()
+	fmt.println(x, y)
+}
+
+func test1(string, int) {
+	return "ccc", 33
 }
