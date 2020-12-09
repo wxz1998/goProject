@@ -17,6 +17,7 @@ func main() {
 	age := 18
 	fmt.Println(name, age, pi)
 	fmt.Println(name1, age1)
+	// 哑元变量 也叫匿名变量
 	x, _ := test1()
 	_, y := test1()
 	fmt.Println(x, y)
