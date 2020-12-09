@@ -22,6 +22,6 @@ func main() {
 	fmt.println(x, y)
 }
 
-func test1(string, int) {
-	return "ccc", 33
+func test1(int, string) {
+	return 33, "ccc"
 }
